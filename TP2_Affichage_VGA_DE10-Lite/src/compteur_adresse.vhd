@@ -29,19 +29,15 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
-			if Ppixel <= c_h and c_h < Ppixel + Npixel then
-				if Pligne <= c_v and c_v < Pligne + Nligne then
+			aclr <= '1';
+			clken <= '0';
+			if Ppixel <= c_h and c_h < Ppixel + Npixel and
+			   Pligne <= c_v and c_v < Pligne + Nligne then
 					clken <= '1';
 					aclr <= '0';
 					cnt <= cnt + 1;
-				else
-					clken <= '0';
-					aclr <= '1';
-					cnt <= 0;
-				end if;
-			else
-				clken <= '0';
-				aclr <= '1';
+			elsif Pligne + Nligne < c_v then
+				cnt <= 0;
 			end if;
 		end if;
 	end process;
@@ -62,19 +58,16 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
+			aclr <= '1';
+			clken <= '0';
 			if c_h < 640 and c_v < 480 then
 				aclr <= '0';
 				clken <= '1';
 				x <= c_h / 4;
 				y <= c_v / 4;
 				cnt <= y * Npixel + x;
-			elsif c_v < 480 then
-				aclr <= '1';
-				clken <= '0';
+			elsif 480 <= c_v then
 				cnt <= 0;
-			else
-				aclr <= '1';
-				clken <= '0';
 			end if;
 		end if;
 	end process;
