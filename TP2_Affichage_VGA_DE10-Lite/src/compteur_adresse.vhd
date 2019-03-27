@@ -20,7 +20,11 @@ end entity;
 
 architecture RTL of compteur_adresse is
 	signal cnt : integer range 0 to 2**15 - 1;
+	signal ew  : integer range 0 to 1023;
+	signal eh  : integer range 0 to 1023;
 begin
+	ew <= Ppixel + Npixel;
+	eh <= Pligne + Nligne;
 
 	process(clk,rst)
 	begin
@@ -30,13 +34,12 @@ begin
 			clken <= '0';
 		elsif rising_edge(clk) then
 			aclr <= '1';
-			clken <= '0';
-			if Ppixel <= c_h and c_h < Ppixel + Npixel and
-			   Pligne <= c_v and c_v < Pligne + Nligne then
-					clken <= '1';
+			clken <= '1';
+			if Ppixel <= c_h and c_h < ew and
+			   Pligne <= c_v and c_v < eh then
 					aclr <= '0';
 					cnt <= cnt + 1;
-			elsif Pligne + Nligne < c_v then
+			elsif eh < c_v then
 				cnt <= 0;
 			end if;
 		end if;
@@ -57,7 +60,7 @@ begin
 			clken <= '0';
 		elsif rising_edge(clk) then
 			aclr <= '1';
-			clken <= '0';
+			clken <= '1';
 			if c_h < 640 and c_v < 480 then
 				aclr <= '0';
 				clken <= '1';
