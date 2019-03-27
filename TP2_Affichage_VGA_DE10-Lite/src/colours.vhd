@@ -119,9 +119,19 @@ begin
 			green <= (others =>'0');
 			blue <= (others =>'0'); 
 		elsif rising_edge(clk)then
+			if 639 < c_h and c_h <= 799 then
+				red   <= (others =>'0');
+				green <= (others =>'0');
+				blue  <= (others =>'0');
+			elsif 479 < c_v and c_v <= 524 then
+				red   <= (others =>'0');
+				green <= (others =>'0');
+				blue  <= (others =>'0');
+			else
 				red   <= (others => q(0));
 				green <= (others => q(1));
 				blue  <= (others => q(2));
+			end if;
 		END IF;
 	END PROCESS;
 end architecture;

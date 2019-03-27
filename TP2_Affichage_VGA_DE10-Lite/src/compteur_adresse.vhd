@@ -26,6 +26,8 @@ begin
 			if c_h < 160 and c_v < 120 then
 				aclr <= '0';
 				cnt <= cnt + 1;
+			elsif c_h >= 160 then
+				aclr <= '1';
 			elsif c_v >= 120 then
 				cnt <= 0;
 				aclr <= '1';				
