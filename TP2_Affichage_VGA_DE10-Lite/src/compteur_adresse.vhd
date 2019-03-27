@@ -29,16 +29,18 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
-			clken <= '1';
 			if Ppixel <= c_h and c_h < Ppixel + Npixel then
 				if Pligne <= c_v and c_v < Pligne + Nligne then
+					clken <= '1';
 					aclr <= '0';
 					cnt <= cnt + 1;
 				else
+					clken <= '0';
 					aclr <= '1';
 					cnt <= 0;
 				end if;
 			else
+				clken <= '0';
 				aclr <= '1';	
 			end if;
 		end if;

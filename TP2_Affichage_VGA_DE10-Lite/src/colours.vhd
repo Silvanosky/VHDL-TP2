@@ -118,27 +118,8 @@ begin
 	Pligne <= to_integer(unsigned(switch_v));
 	s0: entity work.compteur_adresse(RTL2) port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken, Pligne => Pligne, Ppixel => Ppixel);
 	s1: entity work.ROM_Image port map (clock => clk, clken => clken, aclr => aclr, address => addr, q => q);
-	PROCESS(clk,rst)
-	BEGIN
-		IF rst = '1'  THEN
-			red <= (others =>'0');
-			green <= (others =>'0');
-			blue <= (others =>'0');
-		elsif rising_edge(clk)then
-			if 639 < c_h and c_h <= 799 then
-				red   <= (others =>'0');
-				green <= (others =>'0');
-				blue  <= (others =>'0');
-			elsif 479 < c_v and c_v <= 524 then
-				red   <= (others =>'0');
-				green <= (others =>'0');
-				blue  <= (others =>'0');
-			else
-				red   <= (others => q(0));
-				green <= (others => q(1));
-				blue  <= (others => q(2));
-			end if;
-		END IF;
-	END PROCESS;
+	red   <= (others => q(0));
+	green <= (others => q(1));
+	blue  <= (others => q(2));
 end architecture;
 			
