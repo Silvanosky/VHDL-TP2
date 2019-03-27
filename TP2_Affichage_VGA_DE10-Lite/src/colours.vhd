@@ -116,7 +116,7 @@ architecture struct of colours is
 begin
 	Ppixel <= to_integer(unsigned(switch_h));
 	Pligne <= to_integer(unsigned(switch_v));
-	s0: entity work.compteur_adresse(RTL2) port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken, Pligne => Pligne, Ppixel => Ppixel);
+	s0: entity work.compteur_adresse(RTL) port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken, Pligne => Pligne, Ppixel => Ppixel);
 	s1: entity work.ROM_Image port map (clock => clk, clken => clken, aclr => aclr, address => addr, q => q);
 	red   <= (others => q(0));
 	green <= (others => q(1));

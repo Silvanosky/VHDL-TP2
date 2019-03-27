@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed Mar 27 12:52:54 2019
+Analysis & Synthesis Status : Successful - Wed Mar 27 13:57:48 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : TP2_Affichag_VGA_DE10-Lite
 Top-level Entity Name : top_level
 Family : MAX 10
-Total logic elements : 109
-    Total combinational functions : 79
-    Dedicated logic registers : 75
-Total registers : 75
+Total logic elements : 93
+    Total combinational functions : 91
+    Dedicated logic registers : 43
+Total registers : 43
 Total pins : 27
 Total virtual pins : 0
 Total memory bits : 57,600
