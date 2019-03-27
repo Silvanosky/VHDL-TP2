@@ -60,12 +60,12 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
-			clken <= '1';
 			if 0 <= c_h and c_h < 640 then
 				if 0 <= c_v and c_v < 480 then
 					aclr <= '0';
 					x <= c_h / 4;
 					y <= c_v / 4;
+					clken <= '1';
 					cnt <= y * Npixel + x;
 				else
 					aclr <= '1';

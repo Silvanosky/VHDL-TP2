@@ -123,7 +123,7 @@ begin
 		IF rst = '1'  THEN
 			red <= (others =>'0');
 			green <= (others =>'0');
-			blue <= (others =>'0'); 
+			blue <= (others =>'0');
 		elsif rising_edge(clk)then
 			if 639 < c_h and c_h <= 799 then
 				red   <= (others =>'0');
