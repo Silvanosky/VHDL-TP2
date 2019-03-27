@@ -47,8 +47,6 @@ end architecture;
 
 architecture RTL2 of compteur_adresse is
 	signal cnt : integer range 0 to 2**15 - 1;
-	signal x : integer range 0 to 1023;
-	signal y : integer range 0 to 1023;
 begin
 
 	process(clk,rst)
@@ -63,11 +61,7 @@ begin
 			if c_h < 640 and c_v < 480 then
 				aclr <= '0';
 				clken <= '1';
-				x <= c_h / 4;
-				y <= c_v / 4;
-				cnt <= y * Npixel + x;
-			elsif 480 <= c_v then
-				cnt <= 0;
+				cnt <= (c_v / 4) * Npixel + (c_h / 4);
 			end if;
 		end if;
 	end process;
