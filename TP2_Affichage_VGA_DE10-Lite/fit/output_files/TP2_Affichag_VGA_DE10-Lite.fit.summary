@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed Mar 27 12:41:23 2019
+Fitter Status : Successful - Wed Mar 27 12:53:11 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : TP2_Affichag_VGA_DE10-Lite
 Top-level Entity Name : top_level
 Family : MAX 10
 Device : 10M50DAF484C6GES
 Timing Models : Preliminary
-Total logic elements : 82 / 49,760 ( < 1 % )
-    Total combinational functions : 73 / 49,760 ( < 1 % )
-    Dedicated logic registers : 55 / 49,760 ( < 1 % )
-Total registers : 55
+Total logic elements : 109 / 49,760 ( < 1 % )
+    Total combinational functions : 80 / 49,760 ( < 1 % )
+    Dedicated logic registers : 75 / 49,760 ( < 1 % )
+Total registers : 75
 Total pins : 27 / 360 ( 8 % )
 Total virtual pins : 0
 Total memory bits : 57,600 / 1,677,312 ( 3 % )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TP2_Affichag_VGA_DE10-Lite
-Wed Mar 27 12:41:06 2019
+Wed Mar 27 12:52:54 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,21 +15,22 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (No Restructuring Performed)
- 13. Source assignments for interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated
- 14. Parameter Settings for User Entity Instance: interface_vga:U1|colours:s0|compteur_adresse:s0
- 15. Parameter Settings for User Entity Instance: interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: VGA_Audio_PLL:U2|altpll:altpll_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. altpll Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "VGA_Audio_PLL:U2"
- 20. Port Connectivity Checks: "interface_vga:U1|colours:s0|compteur_adresse:s0"
- 21. Port Connectivity Checks: "interface_vga:U1|colours:s0"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Physical Synthesis Netlist Optimizations
+ 14. Multiplexer Restructuring Statistics (No Restructuring Performed)
+ 15. Source assignments for interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated
+ 16. Parameter Settings for User Entity Instance: interface_vga:U1|colours:s0|compteur_adresse:s0
+ 17. Parameter Settings for User Entity Instance: interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: VGA_Audio_PLL:U2|altpll:altpll_component
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. altpll Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "VGA_Audio_PLL:U2"
+ 22. Port Connectivity Checks: "interface_vga:U1|colours:s0|compteur_adresse:s0"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -55,15 +56,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 27 12:41:06 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 27 12:52:54 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; TP2_Affichag_VGA_DE10-Lite                  ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 83                                          ;
-;     Total combinational functions  ; 71                                          ;
-;     Dedicated logic registers      ; 55                                          ;
-; Total registers                    ; 55                                          ;
+; Total logic elements               ; 109                                         ;
+;     Total combinational functions  ; 79                                          ;
+;     Dedicated logic registers      ; 75                                          ;
+; Total registers                    ; 75                                          ;
 ; Total pins                         ; 27                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 57,600                                      ;
@@ -216,20 +217,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                         ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 83                                                                                            ;
+; Estimated Total logic elements              ; 109                                                                                           ;
 ;                                             ;                                                                                               ;
-; Total combinational functions               ; 71                                                                                            ;
+; Total combinational functions               ; 79                                                                                            ;
 ; Logic element usage by number of LUT inputs ;                                                                                               ;
-;     -- 4 input functions                    ; 25                                                                                            ;
-;     -- 3 input functions                    ; 1                                                                                             ;
-;     -- <=2 input functions                  ; 45                                                                                            ;
+;     -- 4 input functions                    ; 19                                                                                            ;
+;     -- 3 input functions                    ; 20                                                                                            ;
+;     -- <=2 input functions                  ; 40                                                                                            ;
 ;                                             ;                                                                                               ;
 ; Logic elements by mode                      ;                                                                                               ;
-;     -- normal mode                          ; 39                                                                                            ;
-;     -- arithmetic mode                      ; 32                                                                                            ;
+;     -- normal mode                          ; 45                                                                                            ;
+;     -- arithmetic mode                      ; 34                                                                                            ;
 ;                                             ;                                                                                               ;
-; Total registers                             ; 55                                                                                            ;
-;     -- Dedicated logic registers            ; 55                                                                                            ;
+; Total registers                             ; 75                                                                                            ;
+;     -- Dedicated logic registers            ; 75                                                                                            ;
 ;     -- I/O registers                        ; 0                                                                                             ;
 ;                                             ;                                                                                               ;
 ; I/O pins                                    ; 27                                                                                            ;
@@ -241,9 +242,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                                                                             ;
 ;                                             ;                                                                                               ;
 ; Maximum fan-out node                        ; VGA_Audio_PLL:U2|altpll:altpll_component|VGA_Audio_PLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 65                                                                                            ;
-; Total fan-out                               ; 579                                                                                           ;
-; Average fan-out                             ; 3.05                                                                                          ;
+; Maximum fan-out                             ; 85                                                                                            ;
+; Total fan-out                               ; 662                                                                                           ;
+; Average fan-out                             ; 3.04                                                                                          ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 
@@ -252,19 +253,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                ; Entity Name          ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |top_level                                      ; 71 (0)              ; 55 (0)                    ; 57600       ; 0          ; 0            ; 0       ; 0         ; 27   ; 0            ; 0          ; |top_level                                                                                                         ; top_level            ; work         ;
+; |top_level                                      ; 79 (0)              ; 75 (0)                    ; 57600       ; 0          ; 0            ; 0       ; 0         ; 27   ; 0            ; 0          ; |top_level                                                                                                         ; top_level            ; work         ;
 ;    |VGA_Audio_PLL:U2|                           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|VGA_Audio_PLL:U2                                                                                        ; VGA_Audio_PLL        ; work         ;
 ;       |altpll:altpll_component|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|VGA_Audio_PLL:U2|altpll:altpll_component                                                                ; altpll               ; work         ;
 ;          |VGA_Audio_PLL_altpll:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|VGA_Audio_PLL:U2|altpll:altpll_component|VGA_Audio_PLL_altpll:auto_generated                            ; VGA_Audio_PLL_altpll ; work         ;
-;    |interface_vga:U1|                           ; 71 (0)              ; 55 (0)                    ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1                                                                                        ; interface_vga        ; work         ;
-;       |SyncGen:s1|                              ; 38 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1                                                                             ; SyncGen              ; work         ;
-;          |SyncVH:svh|                           ; 5 (5)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1|SyncVH:svh                                                                  ; SyncVH               ; work         ;
-;          |countVH:cvh|                          ; 33 (33)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1|countVH:cvh                                                                 ; countVH              ; work         ;
-;       |colours:s0|                              ; 33 (11)             ; 33 (12)                   ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0                                                                             ; colours              ; work         ;
-;          |ROM_Image:s1|                         ; 2 (0)               ; 4 (0)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1                                                                ; ROM_Image            ; work         ;
-;             |altsyncram:altsyncram_component|   ; 2 (0)               ; 4 (0)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
-;                |altsyncram_t2q3:auto_generated| ; 2 (2)               ; 4 (4)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated ; altsyncram_t2q3      ; work         ;
-;          |compteur_adresse:s0|                  ; 20 (20)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|compteur_adresse:s0                                                         ; compteur_adresse     ; work         ;
+;    |interface_vga:U1|                           ; 79 (0)              ; 75 (0)                    ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1                                                                                        ; interface_vga        ; work         ;
+;       |SyncGen:s1|                              ; 39 (0)              ; 23 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1                                                                             ; SyncGen              ; work         ;
+;          |SyncVH:svh|                           ; 4 (4)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1|SyncVH:svh                                                                  ; SyncVH               ; work         ;
+;          |countVH:cvh|                          ; 35 (35)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|SyncGen:s1|countVH:cvh                                                                 ; countVH              ; work         ;
+;       |colours:s0|                              ; 40 (10)             ; 52 (12)                   ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0                                                                             ; colours              ; work         ;
+;          |ROM_Image:s1|                         ; 2 (0)               ; 5 (0)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1                                                                ; ROM_Image            ; work         ;
+;             |altsyncram:altsyncram_component|   ; 2 (0)               ; 5 (0)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
+;                |altsyncram_t2q3:auto_generated| ; 2 (2)               ; 5 (5)                     ; 57600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated ; altsyncram_t2q3      ; work         ;
+;          |compteur_adresse:s0|                  ; 28 (28)             ; 35 (35)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top_level|interface_vga:U1|colours:s0|compteur_adresse:s0                                                         ; compteur_adresse     ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -287,17 +288,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------+------------------------+
 
 
++--------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                               ;
++---------------------------------------------------------+----------------------------------------+
+; Register name                                           ; Reason for Removal                     ;
++---------------------------------------------------------+----------------------------------------+
+; interface_vga:U1|colours:s0|compteur_adresse:s0|x[8,9]  ; Stuck at GND due to stuck port data_in ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|y[7..9] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 5                   ;                                        ;
++---------------------------------------------------------+----------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 55    ;
-; Number of registers using Synchronous Clear  ; 15    ;
+; Total registers                              ; 75    ;
+; Number of registers using Synchronous Clear  ; 13    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 51    ;
+; Number of registers using Asynchronous Clear ; 55    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 49    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -313,13 +325,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |top_level|interface_vga:U1|colours:s0|red ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Physical Synthesis Netlist Optimizations                                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------------+------------------+---------------------+
+; Node                                                                                                                             ; Action           ; Reason              ;
++----------------------------------------------------------------------------------------------------------------------------------+------------------+---------------------+
+; interface_vga:U1|SyncGen:s1|countVH:cvh|Add0~1                                                                                   ; Modified         ; Timing optimization ;
+; interface_vga:U1|SyncGen:s1|countVH:cvh|count_v[9]                                                                               ; Deleted          ; Timing optimization ;
+; interface_vga:U1|SyncGen:s1|countVH:cvh|count_v[9]_OTERM27                                                                       ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|SyncGen:s1|countVH:cvh|count_v[9]_OTERM29                                                                       ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|SyncGen:s1|countVH:cvh|count_v~1                                                                                ; Modified         ; Timing optimization ;
+; interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated|address_reg_a[0]         ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated|address_reg_a[0]_OTERM35 ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated|address_reg_a[1]         ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated|address_reg_a[1]_OTERM31 ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component|altsyncram_t2q3:auto_generated|address_reg_a[1]_OTERM33 ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[5]                                                                           ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[5]_OTERM17                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[5]_OTERM19                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[6]                                                                           ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[6]_OTERM21                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[6]_OTERM23                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[7]                                                                           ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[7]_OTERM1                                                                    ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[7]_OTERM25                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[8]                                                                           ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[8]_OTERM3                                                                    ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[9]                                                                           ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[9]_OTERM5                                                                    ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[10]                                                                          ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[10]_OTERM7                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[11]                                                                          ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[11]_OTERM9                                                                   ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[12]                                                                          ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[12]_OTERM11                                                                  ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[13]                                                                          ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[13]_OTERM13                                                                  ; Retimed Register ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[14]                                                                          ; Deleted          ; Timing optimization ;
+; interface_vga:U1|colours:s0|compteur_adresse:s0|cnt[14]_OTERM15                                                                  ; Retimed Register ; Timing optimization ;
++----------------------------------------------------------------------------------------------------------------------------------+------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (No Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |top_level|interface_vga:U1|colours:s0|green ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------+
@@ -835,40 +888,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+-------------------------------------------+
 
 
-+---------------------------------------------------------+
-; Port Connectivity Checks: "interface_vga:U1|colours:s0" ;
-+----------+-------+----------+---------------------------+
-; Port     ; Type  ; Severity ; Details                   ;
-+----------+-------+----------+---------------------------+
-; switch_h ; Input ; Info     ; Stuck at GND              ;
-; switch_v ; Input ; Info     ; Stuck at GND              ;
-+----------+-------+----------+---------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 27                          ;
-; cycloneiii_ff         ; 55                          ;
+; cycloneiii_ff         ; 75                          ;
 ;     CLR               ; 26                          ;
-;     ENA               ; 4                           ;
-;     ENA CLR           ; 10                          ;
-;     ENA CLR SCLR      ; 15                          ;
-; cycloneiii_lcell_comb ; 73                          ;
-;     arith             ; 32                          ;
-;         2 data inputs ; 32                          ;
-;     normal            ; 41                          ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 25                          ;
+;     ENA               ; 20                          ;
+;     ENA CLR           ; 16                          ;
+;     ENA CLR SCLR      ; 13                          ;
+; cycloneiii_lcell_comb ; 81                          ;
+;     arith             ; 34                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 8                           ;
+;     normal            ; 47                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 19                          ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 9                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.09                        ;
+; Average LUT depth     ; 1.93                        ;
 +-----------------------+-----------------------------+
 
 
@@ -887,7 +932,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Mar 27 12:40:47 2019
+    Info: Processing started: Wed Mar 27 12:52:36 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TP2_Affichag_VGA_DE10-Lite -c TP2_Affichag_VGA_DE10-Lite
 Info (16303): Aggressive Performance optimization mode selected -- timing performance will be prioritized at the potential cost of increased logic area and compilation time
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -912,8 +957,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
 Info (12021): Found 2 design units, including 1 entities, in source file /users/coren/documents/github/vhdl-tp2/tp2_affichage_vga_de10-lite/src/countvh.vhd
     Info (12022): Found design unit 1: countVH-RTL File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/countVH.vhd Line: 14
     Info (12023): Found entity 1: countVH File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/countVH.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file /users/coren/documents/github/vhdl-tp2/tp2_affichage_vga_de10-lite/src/compteur_adresse.vhd
+Info (12021): Found 3 design units, including 1 entities, in source file /users/coren/documents/github/vhdl-tp2/tp2_affichage_vga_de10-lite/src/compteur_adresse.vhd
     Info (12022): Found design unit 1: compteur_adresse-RTL File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/compteur_adresse.vhd Line: 21
+    Info (12022): Found design unit 2: compteur_adresse-RTL2 File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/compteur_adresse.vhd Line: 50
     Info (12023): Found entity 1: compteur_adresse File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/compteur_adresse.vhd Line: 5
 Info (12021): Found 3 design units, including 1 entities, in source file /users/coren/documents/github/vhdl-tp2/tp2_affichage_vga_de10-lite/src/colours.vhd
     Info (12022): Found design unit 1: colours-mire File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/colours.vhd Line: 20
@@ -924,7 +970,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file de10_li
 Info (12127): Elaborating entity "top_level" for the top level hierarchy
 Info (12128): Elaborating entity "interface_vga" for hierarchy "interface_vga:U1" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/top_level.vhd Line: 39
 Info (12129): Elaborating entity "colours" using architecture "A:struct" for hierarchy "interface_vga:U1|colours:s0" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/interface_vga.vhd Line: 22
-Info (12128): Elaborating entity "compteur_adresse" for hierarchy "interface_vga:U1|colours:s0|compteur_adresse:s0" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/colours.vhd Line: 119
+Info (12129): Elaborating entity "compteur_adresse" using architecture "A:rtl2" for hierarchy "interface_vga:U1|colours:s0|compteur_adresse:s0" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/colours.vhd Line: 119
 Info (12128): Elaborating entity "ROM_Image" for hierarchy "interface_vga:U1|colours:s0|ROM_Image:s1" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/colours.vhd Line: 120
 Info (12128): Elaborating entity "altsyncram" for hierarchy "interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/ROM_Image.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "interface_vga:U1|colours:s0|ROM_Image:s1|altsyncram:altsyncram_component" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/ROM_Image.vhd Line: 62
@@ -1077,10 +1123,10 @@ Info (332111): Found 2 clocks
     Info (332111):   20.000     CLOCK_50
     Info (332111):   40.000 U2|altpll_component|auto_generated|pll1|clk[0]
 Info (128002): Starting physical synthesis algorithm register retiming
-Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 0 ps
+Info (128003): Physical synthesis algorithm register retiming complete: estimated slack improvement of 1 ps
 Info (128002): Starting physical synthesis algorithm combinational resynthesis using boolean division
 Info (128003): Physical synthesis algorithm combinational resynthesis using boolean division complete: estimated slack improvement of 0 ps
-Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:00
+Info (128001): Physical synthesis optimizations for speed complete: elapsed time is 00:00:01
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 11 input pin(s) that do not drive logic
@@ -1095,16 +1141,16 @@ Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/top_level.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/top_level.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/src/top_level.vhd Line: 12
-Info (21057): Implemented 123 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 86 logic cells
+    Info (21061): Implemented 114 logic cells
     Info (21064): Implemented 9 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4881 megabytes
-    Info: Processing ended: Wed Mar 27 12:41:06 2019
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:38
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Wed Mar 27 12:52:54 2019
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:36
 
 

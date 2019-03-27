@@ -19,7 +19,7 @@ ARCHITECTURE struct OF interface_vga IS
    signal v,h : integer range 0 to 1023;
    	
 BEGIN
-	s0: entity work.colours(struct) port map (rst => rst, clk => clk, c_v => v, c_h => h, switch => switch, red => red, green => green, blue => blue);
+	s0: entity work.colours(struct) port map (rst => rst, clk => clk, c_v => v, c_h => h, switch => switch, red => red, green => green, blue => blue, switch_h => switch_h, switch_v=>switch_v);
 	s1: entity work.SyncGen port map (rst => rst, clk => clk, c_h => h, c_v => v, hor_sync => hor_sync, ver_sync => ver_sync);
  
 	
