@@ -24,13 +24,13 @@ BEGIN
       ver_sync <= '1';
 
  	 elsif rising_edge(clk) then
-      if c_h > 7 and c_h < 104 then
+      if c_h >= 655 and c_h < 751 then
         hor_sync <= '0';
       else
         hor_sync <= '1';
       end if;
 
-      if c_v > 1 and c_v < 4 then
+      if c_v >= 489 and c_v < 491 then
         ver_sync <= '0';
       else
         ver_sync <= '1';

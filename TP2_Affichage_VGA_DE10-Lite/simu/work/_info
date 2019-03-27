@@ -1,0 +1,175 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/coren/Documents/GitHub/VHDL-TP2/TP2_Affichage_VGA_DE10-Lite/simu
+Ecountvh
+Z1 w1553676866
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../src/countVH.vhd
+Z6 F../src/countVH.vhd
+l0
+L5
+VIGOclC:O8DT^9Rmk1_JIS0
+!s100 Nz=mm78CK26?MR5mmGZ:d0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1553679683
+!i10b 1
+Z9 !s108 1553679683.000000
+Z10 !s90 -reportprogress|300|-93|../src/countVH.vhd|
+Z11 !s107 ../src/countVH.vhd|
+!i113 1
+o-93
+Z12 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 7 countvh 0 22 IGOclC:O8DT^9Rmk1_JIS0
+l16
+L14
+V>c^[zdI@m0FV9C6dRK?`X2
+!s100 WcZMK;SbOhVmX;>;84@730
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+o-93
+R12
+Esyncgen
+Z13 w1553677402
+R2
+R3
+R4
+R0
+Z14 8../src/syncGen.vhd
+Z15 F../src/syncGen.vhd
+l0
+L5
+V<dPb_T8Ao3GJ5BZHS:hc52
+!s100 neM>RLG:nLdARDCob3;nj3
+R7
+31
+Z16 !s110 1553679684
+!i10b 1
+Z17 !s108 1553679684.000000
+Z18 !s90 -reportprogress|300|-93|../src/syncGen.vhd|
+Z19 !s107 ../src/syncGen.vhd|
+!i113 1
+o-93
+R12
+Astruct
+R2
+R3
+R4
+Z20 DEx4 work 7 syncgen 0 22 <dPb_T8Ao3GJ5BZHS:hc52
+l38
+L15
+VPMegm9JiCidQ_if9K6Yei3
+!s100 @F7DO^=l4N5cHeA^T:JF02
+R7
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+o-93
+R12
+Esyncgen_tb
+Z21 w1553675596
+R2
+R3
+R4
+R0
+Z22 8SyncGen_tb.vhd
+Z23 FSyncGen_tb.vhd
+l0
+L5
+VzcS9CMlaXBN0f2^]h`I2N0
+!s100 ;QcHE9=9[dK^l=Aib;?[91
+R7
+31
+R16
+!i10b 1
+R17
+Z24 !s90 -reportprogress|300|-93|SyncGen_tb.vhd|
+Z25 !s107 SyncGen_tb.vhd|
+!i113 1
+o-93
+R12
+Abench
+R20
+R2
+R3
+R4
+Z26 DEx4 work 10 syncgen_tb 0 22 zcS9CMlaXBN0f2^]h`I2N0
+l18
+L9
+Z27 VIQNRZQ1[3Kcii005WY_]R2
+Z28 !s100 >4X^fCC1BGM?ZKIPTCdQE3
+R7
+31
+R16
+!i10b 1
+R17
+R24
+R25
+!i113 1
+o-93
+R12
+Esyncvh
+Z29 w1553679680
+R2
+R3
+R4
+R0
+Z30 8../src/syncVH.vhd
+Z31 F../src/syncVH.vhd
+l0
+L5
+V_00gCI=g=d]a=bjRR1kTO2
+!s100 `8V2mlZghK@8XBojYd?l=1
+R7
+31
+R8
+!i10b 1
+R9
+Z32 !s90 -reportprogress|300|-93|../src/syncVH.vhd|
+Z33 !s107 ../src/syncVH.vhd|
+!i113 1
+o-93
+R12
+Artl
+R2
+R3
+R4
+DEx4 work 6 syncvh 0 22 _00gCI=g=d]a=bjRR1kTO2
+l17
+L16
+V23=h<`iZX?SK8DLaYZlAU3
+!s100 ?B7Rd;0VH@U6WkdS=>cTM0
+R7
+31
+R8
+!i10b 1
+R9
+R32
+R33
+!i113 1
+o-93
+R12
