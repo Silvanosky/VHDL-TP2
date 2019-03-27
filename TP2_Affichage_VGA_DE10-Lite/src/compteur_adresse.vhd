@@ -22,12 +22,13 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
+			clken <= '1';
 			if c_h < 160 and c_v < 120 then
 				aclr <= '0';
 				cnt <= cnt + 1;
-			else
+			elsif c_v >= 120 then
 				cnt <= 0;
-				aclr <= '1';
+				aclr <= '1';				
 			end if;
 		end if;
 	end process;
