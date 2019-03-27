@@ -16,17 +16,24 @@ END entity colours;
 
 ARCHITECTURE mire OF colours IS
 BEGIN
-  PROCESS(clk,rst)
-  BEGIN  
-    
-    IF rst = '1'  THEN
-      red <= (others =>'0');
-	  green <= (others =>'0');
-	  blue <= (others =>'0'); 
- 	 elsif rising_edge(clk)then
- 	 	
-    END IF;
-  END PROCESS;
+	PROCESS(clk,rst)
+	BEGIN  
+		IF rst = '1'  THEN
+			red <= (others =>'0');
+			green <= (others =>'0');
+			blue <= (others =>'0'); 
+		elsif rising_edge(clk)then
+			if 0 < c_h and c_h < 80 then
+				red   <= x"F";
+				green <= x"0";
+				blue  <= x"0";
+			else
+				red   <= (others =>'0');
+				green <= (others =>'0');
+				blue  <= (others =>'0'); 
+			end if;
+		END IF;
+	END PROCESS;
 END architecture;
 
 architecture struct of colours is
