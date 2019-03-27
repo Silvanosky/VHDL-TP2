@@ -3,6 +3,12 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity compteur_adresse is
+generic(
+	Ppixel : in integer range 0 to 1023 := 50;
+	Pligne : in integer range 0 to 1023 := 50;
+	Npixel : in integer range 0 to 1023 := 160;
+	Nligne : in integer range 0 to 1023 := 120
+);
 port (
 	c_v, c_h : integer range 0 to 1023;
 	clk,rst : in std_logic;
@@ -23,14 +29,16 @@ begin
 			clken <= '0';
 		elsif rising_edge(clk) then
 			clken <= '1';
-			if c_h < 160 and c_v < 120 then
-				aclr <= '0';
-				cnt <= cnt + 1;
-			elsif c_h >= 160 then
-				aclr <= '1';
-			elsif c_v >= 120 then
-				cnt <= 0;
-				aclr <= '1';				
+			if Ppixel < c_h and c_h < Ppixel + Npixel then
+				if Pligne < c_v and c_v < Pligne + Nligne then
+					aclr <= '0';
+					cnt <= cnt + 1;
+				else
+					aclr <= '1';
+					cnt <= 0;
+				end if;
+			else
+				aclr <= '1';	
 			end if;
 		end if;
 	end process;
