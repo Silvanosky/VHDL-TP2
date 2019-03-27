@@ -44,7 +44,9 @@ PORT MAP(rst => rst,
 		 hor_sync => VGA_HS,
 		 blue => VGA_B,
 		 green => VGA_G,
-		 red => VGA_R);
+		 red => VGA_R,
+		 switch_h => SW(4 downto 0),
+		 switch_v => SW(9 downto 5));
 
 U2 : VGA_Audio_PLL
 PORT MAP(inclk0 => CLOCK_50,

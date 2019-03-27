@@ -4,8 +4,7 @@ use ieee.numeric_std.all;
 
 entity compteur_adresse is
 generic(
-	Ppixel : in integer range 0 to 1023 := 50;
-	Pligne : in integer range 0 to 1023 := 50;
+	
 	Npixel : in integer range 0 to 1023 := 160;
 	Nligne : in integer range 0 to 1023 := 120
 );
@@ -14,7 +13,9 @@ port (
 	clk,rst : in std_logic;
 	addr : out std_logic_vector(14 downto 0);
 	aclr : out std_logic;
-	clken : out std_logic);
+	clken : out std_logic;
+	Ppixel : in integer range 0 to 1023;
+	Pligne : in integer range 0 to 1023);
 end entity;
 
 architecture RTL of compteur_adresse is
@@ -29,8 +30,8 @@ begin
 			clken <= '0';
 		elsif rising_edge(clk) then
 			clken <= '1';
-			if Ppixel < c_h and c_h < Ppixel + Npixel then
-				if Pligne < c_v and c_v < Pligne + Nligne then
+			if Ppixel <= c_h and c_h < Ppixel + Npixel then
+				if Pligne <= c_v and c_v < Pligne + Nligne then
 					aclr <= '0';
 					cnt <= cnt + 1;
 				else

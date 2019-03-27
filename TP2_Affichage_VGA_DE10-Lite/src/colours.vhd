@@ -10,7 +10,10 @@ entity colours is port(
    switch 	    : in std_logic;
    red			: out std_logic_vector(3 downto 0); 
    green		: out std_logic_vector(3 downto 0); 
-   blue     	: out std_logic_vector(3 downto 0) );        
+   blue     	: out std_logic_vector(3 downto 0);
+	switch_h : in std_logic_vector(4 downto 0) := "00000";
+	switch_v : in std_logic_vector(4 downto 0) := "00000"
+	);        
 END entity colours;
 
 
@@ -109,8 +112,11 @@ architecture struct of colours is
 	signal aclr : std_logic;
 	signal clken : std_logic;
 	signal q : STD_LOGIC_VECTOR (2 DOWNTO 0);
+	signal Ppixel, Pligne : integer range 0 to 1023;
 begin
-	s0: entity work.compteur_adresse port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken);
+	Ppixel <= to_integer(unsigned(switch_h));
+	Pligne <= to_integer(unsigned(switch_v));
+	s0: entity work.compteur_adresse port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken, Pligne => Pligne, Ppixel => Ppixel);
 	s1: entity work.ROM_Image port map (clock => clk, clken => clken, aclr => aclr, address => addr, q => q);
 	PROCESS(clk,rst)
 	BEGIN
