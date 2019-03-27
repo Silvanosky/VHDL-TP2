@@ -15,16 +15,22 @@ architecture RTL of compteur_adresse is
 	signal cnt : integer range 0 to 2**15 - 1;
 begin
 
-process(clk,rst)
-begin
-	if rst = '1' then
-		cnt <= 0;
-		aclr <= '0';
-		clken <= '0';
-	elsif rising_edge(clk) then
-		
-	end if;
-end process;
+	process(clk,rst)
+	begin
+		if rst = '1' then
+			cnt <= 0;
+			aclr <= '0';
+			clken <= '0';
+		elsif rising_edge(clk) then
+			if c_h < 160 and c_v < 120 then
+				aclr <= '0';
+				cnt <= cnt + 1;
+			else
+				cnt <= 0;
+				aclr <= '1';
+			end if;
+		end if;
+	end process;
 	
 	addr <= std_logic_vector(to_unsigned(cnt,15));
 end architecture;

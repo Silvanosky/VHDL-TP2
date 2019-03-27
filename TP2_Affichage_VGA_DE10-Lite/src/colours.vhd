@@ -105,7 +105,24 @@ BEGIN
 END architecture;
 
 architecture struct of colours is
+	signal addr : std_logic_vector(14 downto 0);
+	signal aclr : std_logic;
+	signal clken : std_logic;
+	signal q : STD_LOGIC_VECTOR (2 DOWNTO 0);
 begin
-	
+	s0: entity work.compteur_adresse port map (rst => rst, clk => clk, c_v => c_v, c_h => c_h, addr => addr, aclr => aclr, clken => clken);
+	s1: entity work.ROM_Image port map (clock => clk, clken => clken, aclr => aclr, address => addr, q => q);
+	PROCESS(clk,rst)
+	BEGIN
+		IF rst = '1'  THEN
+			red <= (others =>'0');
+			green <= (others =>'0');
+			blue <= (others =>'0'); 
+		elsif rising_edge(clk)then
+				red   <= (others => q(0));
+				green <= (others => q(1));
+				blue  <= (others => q(2));
+		END IF;
+	END PROCESS;
 end architecture;
 			
