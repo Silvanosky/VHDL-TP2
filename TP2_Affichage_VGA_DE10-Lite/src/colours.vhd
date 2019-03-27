@@ -64,6 +64,56 @@ BEGIN
 	END PROCESS;
 END architecture;
 
+ARCHITECTURE mire2 OF colours IS
+BEGIN
+	PROCESS(clk,rst)
+	BEGIN  
+		IF rst = '1'  THEN
+			red <= (others =>'0');
+			green <= (others =>'0');
+			blue <= (others =>'0'); 
+		elsif rising_edge(clk)then
+			if 0 <= c_v and c_v < 60 then
+				red   <= x"0";
+				green <= x"0";
+				blue  <= x"0";
+			elsif 60 <= c_v and c_v < 120 then
+				red   <= x"F";
+				green <= x"0";
+				blue  <= x"0";
+			elsif 120 <= c_v and c_v < 180 then
+				red   <= x"0";
+				green <= x"F";
+				blue  <= x"0";
+			elsif 180 <= c_v and c_v < 240 then
+				red   <= x"F";
+				green <= x"F";
+				blue  <= x"0";
+			elsif 240 <= c_v and c_v < 300 then
+				red   <= x"0";
+				green <= x"0";
+				blue  <= x"F";
+			elsif 300 <= c_v and c_v < 360 then
+				red   <= x"F";
+				green <= x"0";
+				blue  <= x"F";
+			elsif 360 <= c_v and c_v < 420 then
+				red   <= x"0";
+				green <= x"F";
+				blue  <= x"F";
+			elsif 420 <= c_v and c_v < 480 then
+				red   <= x"F";
+				green <= x"F";
+				blue  <= x"F";
+			else
+				red   <= (others =>'0');
+				green <= (others =>'0');
+				blue  <= (others =>'0'); 
+			end if;
+		END IF;
+	END PROCESS;
+END architecture;
+
 architecture struct of colours is
 begin
 	
