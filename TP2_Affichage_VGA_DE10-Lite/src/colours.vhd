@@ -23,10 +23,38 @@ BEGIN
 			green <= (others =>'0');
 			blue <= (others =>'0'); 
 		elsif rising_edge(clk)then
-			if 0 < c_h and c_h < 80 then
+			if 0 <= c_h and c_h < 80 then
+				red   <= x"0";
+				green <= x"0";
+				blue  <= x"0";
+			elsif 80 <= c_h and c_h < 160 then
 				red   <= x"F";
 				green <= x"0";
 				blue  <= x"0";
+			elsif 160 <= c_h and c_h < 240 then
+				red   <= x"0";
+				green <= x"F";
+				blue  <= x"0";
+			elsif 240 <= c_h and c_h < 320 then
+				red   <= x"F";
+				green <= x"F";
+				blue  <= x"0";
+			elsif 320 <= c_h and c_h < 400 then
+				red   <= x"0";
+				green <= x"0";
+				blue  <= x"F";
+			elsif 400 <= c_h and c_h < 480 then
+				red   <= x"F";
+				green <= x"0";
+				blue  <= x"F";
+			elsif 480 <= c_h and c_h < 560 then
+				red   <= x"0";
+				green <= x"F";
+				blue  <= x"F";
+			elsif 560 <= c_h and c_h < 640 then
+				red   <= x"F";
+				green <= x"F";
+				blue  <= x"F";
 			else
 				red   <= (others =>'0');
 				green <= (others =>'0');
