@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity compteur_adresse is
 generic(
-	
+
 	Npixel : in integer range 0 to 1023 := 160;
 	Nligne : in integer range 0 to 1023 := 120
 );
@@ -41,11 +41,11 @@ begin
 				end if;
 			else
 				clken <= '0';
-				aclr <= '1';	
+				aclr <= '1';
 			end if;
 		end if;
 	end process;
-	
+
 	addr <= std_logic_vector(to_unsigned(cnt,15));
 end architecture;
 
@@ -62,25 +62,23 @@ begin
 			aclr <= '0';
 			clken <= '0';
 		elsif rising_edge(clk) then
-			if 0 <= c_h and c_h < 640 then
-				if 0 <= c_v and c_v < 480 then
-					aclr <= '0';
-					x <= c_h / 4;
-					y <= c_v / 4;
-					clken <= '1';
-					cnt <= y * Npixel + x;
-				else
-					aclr <= '1';
-					clken <= '0';
-					cnt <= 0;
-				end if;
+			if c_h < 640 and c_v < 480 then
+				aclr <= '0';
+				clken <= '1';
+				x <= c_h / 4;
+				y <= c_v / 4;
+				cnt <= y * Npixel + x;
+			elsif c_v < 480 then
+				aclr <= '1';
+				clken <= '0';
+				cnt <= 0;
 			else
-				aclr <= '1';	
+				aclr <= '1';
 				clken <= '0';
 			end if;
 		end if;
 	end process;
-	
+
 	addr <= std_logic_vector(to_unsigned(cnt,15));
 end architecture;
-	
+
