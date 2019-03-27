@@ -66,13 +66,15 @@ begin
 					aclr <= '0';
 					x <= c_h / 4;
 					y <= c_v / 4;
-					cnt <= y * 640 + x;
+					cnt <= y * Npixel + x;
 				else
 					aclr <= '1';
+					clken <= '0';
 					cnt <= 0;
 				end if;
 			else
 				aclr <= '1';	
+				clken <= '0';
 			end if;
 		end if;
 	end process;
